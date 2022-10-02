@@ -1,13 +1,26 @@
 #include <stdio.h>
 #include <string.h>
 
+
 int my_printf(char *format_string, char *param){
 	for(int i=0;i<strlen(format_string);i++){
 		if((format_string[i] == '#') && (format_string[i+1] == 'k')){
 			i++;
 			printf("%s",param);
 		}else
-			putchar(format_string[i]);
+		{	
+			if(isalpha(format_string[i]!=0)){
+				if(format_string[i] >= 65 && format_string[i] <= 90){
+					putchar(format_string[i+32]);
+				}
+				else if(format_string[i] >= 97 && format_string[i] <= 122){
+					putchar(format_string[i-32]);
+				}
+			
+			}
+		
+		}	
+
 	}
 	puts("");
 }
