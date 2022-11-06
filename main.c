@@ -23,7 +23,7 @@ int main(int argc, char *argv[]){
 	char buf[1024];
 	int buf2;
 	while(gets(buf)){
-		if((scanf("%d", buf2)) == 0) {printf("Podales nie liczbe\n");return 1;}
+		if((scanf("%d", &buf2)) == 0) {printf("Podales nie liczbe\n");return 1;}
 		my_printf(buf,buf2);
 	}
 	return 0;
