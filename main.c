@@ -17,7 +17,7 @@ int main(int argc, char *argv[]){
 	char buf[1024];
 	int buf2;
 	while(gets(buf)){
-		gets(buf2);
+		scanf("%d", buf2);
 		my_printf(buf,buf2);
 	}
 	return 0;
