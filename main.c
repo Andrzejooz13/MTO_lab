@@ -5,7 +5,13 @@ int my_printf(char *format_string, int param){
 	for(int i=0;i<strlen(format_string);i++){
 		if((format_string[i] == '#') && (format_string[i+1] == 'g')){
 			i++;
-			printf("%d",param);
+			int temp;
+			for(;;){
+				temp=param % 10;
+				printf("%d",temp);
+				
+				if((param=param/10) == 0) break;
+			}
 		}else
 			putchar(format_string[i]);
 	}
