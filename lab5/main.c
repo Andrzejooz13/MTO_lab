@@ -7,8 +7,8 @@ int my_printf(char *format_string, int param){
 			i++;
 			int temp;
 			int tab[1000];
-			for(;;){
-				if((param/10) == 0) break;
+			for(int i=0;;i++){
+				
 				temp=param % 10;
 				if(temp==0){
 					temp=9;
