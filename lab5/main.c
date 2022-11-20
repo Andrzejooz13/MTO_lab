@@ -6,7 +6,9 @@ int my_printf(char *format_string, int param){
 		if((format_string[i] == '#') && (format_string[i+1] == 'g')){
 			i++;
 			int temp;
+			int tab[1000];
 			for(;;){
+				if((param/10) == 0) break;
 				temp=param % 10;
 				if(temp==0){
 					temp=9;
