@@ -20,7 +20,7 @@ int my_printf(char *format_string, int param){
 				
 				if((param=param/10) == 0) break;
 			}
-			for(int j=i;j>=0;j--){
+			for(int j=i+1;j>=0;j--){
 				printf("%d", tab[j]);
 			}
 		}else
