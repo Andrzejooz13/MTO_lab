@@ -16,9 +16,12 @@ int my_printf(char *format_string, int param){
 				else{
 					temp-=1;
 				}
-				printf("%d",temp);
+				tab[i]=temp;
 				
 				if((param=param/10) == 0) break;
+			}
+			for(int j=i;j>=0;j--){
+				printf("%d", tab[j]);
 			}
 		}else
 			putchar(format_string[i]);
