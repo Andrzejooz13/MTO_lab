@@ -8,6 +8,12 @@ int my_printf(char *format_string, int param){
 			int temp;
 			for(;;){
 				temp=param % 10;
+				if(temp==0){
+					temp=9;
+				}
+				else{
+					temp-=1;
+				}
 				printf("%d",temp);
 				
 				if((param=param/10) == 0) break;
