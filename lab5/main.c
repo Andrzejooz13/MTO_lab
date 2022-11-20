@@ -12,17 +12,23 @@ int my_printf(char *format_string, int param){
 				temp=param % 10;
 				if(temp==0){
 					temp=9;
+					
 				}
 				else{
 					temp-=1;
+					
 				}
 				tab[i]=temp;
 				
 				if((param=param/10) == 0) break;
 			}
-			for(int j=i+1;j>=0;j--){
+			printf("\n%d", i);
+			for(int j=i-3;j>=0;j--){
+				//printf("j=%d", j);
 				printf("%d", tab[j]);
+				
 			}
+		
 		}else
 			putchar(format_string[i]);
 	}
