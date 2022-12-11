@@ -29,9 +29,10 @@ int my_printf(char *format_string, int param){
 		}else{
 			putchar(format_string[i]);
 	}
+	}
 	puts("");
 	return 0;
-}
+
 }
 int main(int argc, char *argv[]){
 	char buf[1024];
