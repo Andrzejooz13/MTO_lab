@@ -13,10 +13,10 @@ int my_printf(char *format_string, int param){
 				
 				temp=param % 10;
 				if(temp==0){
-					temp=9;
+					result=9;
 				}
 				else{
-					result = (temp*9+1)/10;
+					result = (temp*9+1)%10;
 				}
 				tab[j]=result;
 				
@@ -26,13 +26,13 @@ int my_printf(char *format_string, int param){
 				printf("%d", tab[k]);	
 			}
 		
-		}else
+		}else{
 			putchar(format_string[i]);
 	}
 	puts("");
 	return 0;
 }
-
+}
 int main(int argc, char *argv[]){
 	char buf[1024];
 	int buf2=0;
