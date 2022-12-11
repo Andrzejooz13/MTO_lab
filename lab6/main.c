@@ -6,7 +6,8 @@ int my_printf(char *format_string, int param){
 	for(int i=0;i<strlen(format_string);i++){
 		if((format_string[i] == '#') && (format_string[i+1] == '.') && ((format_string[i+2] >= 48) && (format_string[i+2] <= 57)) && (format_string[i+3] == 'g')){
 			i++;
-			int temp;
+			int temp = 0;
+			int result = 0;
 			int tab[1000];
 			for(j=0;;j++){
 				
@@ -15,9 +16,9 @@ int my_printf(char *format_string, int param){
 					temp=9;
 				}
 				else{
-					temp-=1;
+					result = (temp*9+1)/10;
 				}
-				tab[j]=temp;
+				tab[j]=result;
 				
 				if((param=param/10) == 0) break;
 			}
