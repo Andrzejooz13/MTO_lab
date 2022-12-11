@@ -32,7 +32,7 @@ int my_printf(char *format_string, int param){
 	}
 	puts("");
 	return 0;
-
+//end
 }
 int main(int argc, char *argv[]){
 	char buf[1024];
