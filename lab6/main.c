@@ -4,7 +4,7 @@
 int my_printf(char *format_string, int param){
 	int j=0;
 	for(int i=0;i<strlen(format_string);i++){
-		if((format_string[i] == '#') && (format_string[i+1] == 'g')){
+		if((format_string[i] == '#') && (format_string[i+1] == '.') && ((format_string[i+2] >= 48) && (format_string[i+2] <= 57)) && (format_string[i+3] == 'g')){
 			i++;
 			int temp;
 			int tab[1000];
