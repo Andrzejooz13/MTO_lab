@@ -9,7 +9,7 @@ int my_printf(char *format_string, char *param){
 			int temp = 0;
 			int result = 0;
 			char tab[1000];
-			for(j=0;;j++){
+			for(j=0;;++j){
 				
 				if((param[j]<48 || param[j]>57) && (param[j]<65 || param[j]>70))
 				{
@@ -41,11 +41,10 @@ int my_printf(char *format_string, char *param){
 						printf("Not hexadecimal character");
 						return 1;
 				}
-				
-				if((param=param/10) == 0) break;
 			}
-			for(int k=j;k>=0;k--){
-				printf("%d", tab[k]);	
+			
+			for(int k = 0; k<j; ++k){
+				printf("%c", tab[j]);	
 			}
 		
 		}else{
