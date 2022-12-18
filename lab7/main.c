@@ -38,7 +38,8 @@ int main(int argc, char *argv[]){
 	char buf[1024];
 	char buf2[1024];
 	while(gets(buf)){
-		if((scanf("%s", buf2)) == 0); 
+		(scanf("%[^\n]s", buf2);
+		getchar(); 
 		my_printf(buf,buf2);
 		getchar();
 	}
