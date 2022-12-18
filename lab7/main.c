@@ -3,6 +3,7 @@
 
 int my_printf(char *format_string, char *param){
 	int j=0;
+	
 	for(int i=0;i<strlen(format_string);i++){
 		if(format_string[i] == '#' && format_string[i+1] == 'j'){
 			i++;
@@ -11,10 +12,20 @@ int my_printf(char *format_string, char *param){
 			char tab[1000];
 			for(j=0;;++j){
 				
-				if((param[j]<48 || param[j]>57) && (param[j]<65 || param[j]>70))
-				{
-					printf("Not hexadecimal character");
+				if(param[j] == 10) break;
+				if(param[j]<48 || param[j]>57)
+				{					
+					printf("\nNot hexadecimal character\n");
 					return 1;
+				}
+				else if(param[j]<65 || param[j]>70)
+				{
+					printf("\nNot hexadecimal character\n");
+					return 1;
+				}
+				else
+				{
+					continue;
 				}
 				
 				switch(param[j])
@@ -37,10 +48,9 @@ int my_printf(char *format_string, char *param){
 					case 70:
 						tab[j] = 76;
 						break;
-					default:
-						printf("Not hexadecimal character");
-						return 1;
 				}
+				
+				
 			}
 			
 			for(int k = 0; k<j; ++k){
@@ -59,6 +69,7 @@ int main(int argc, char *argv[]){
 	char buf[1024];
 	char buf2[1024];
 	while(gets(buf)){
+		
 		scanf("%[^\n]s", buf2);
 		getchar(); 
 		my_printf(buf,buf2);
