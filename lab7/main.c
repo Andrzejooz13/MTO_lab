@@ -1,17 +1,17 @@
 #include <stdio.h>
 #include <string.h>
 
-int my_printf(char *format_string, int param){
+int my_printf(char *format_string, char param){
 	int j=0;
 	for(int i=0;i<strlen(format_string);i++){
-		if((format_string[i] == '#') && (format_string[i+1] == '.') && ((format_string[i+2] >= 48) && (format_string[i+2] <= 57)) && (format_string[i+3] == 'g')){
+		if((format_string[i] == '#') && (format_string[i+1] == 'j'){
 			i++;
 			int temp = 0;
 			int result = 0;
-			int tab[1000];
+			char tab[1000];
 			for(j=0;;j++){
 				
-				temp=param % 10;
+				char[tab]=param % 10;
 				if(temp==0){
 					result=9;
 				}
@@ -36,9 +36,9 @@ int my_printf(char *format_string, int param){
 }
 int main(int argc, char *argv[]){
 	char buf[1024];
-	int buf2=0;
+	char buf2[1024];
 	while(gets(buf)){
-		if((scanf("%d", &buf2)) == 0) {printf("Podales nie liczbe\n");return 1;}
+		if((scanf("%s", buf2)) == 0); 
 		my_printf(buf,buf2);
 		getchar();
 	}
